@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pybt.sites</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="pybt.html"><font color="#ffffff">pybt</font></a>.sites</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/adamzhang/PycharmProjects/python-bt-sdk/pybt/sites.py">/Users/adamzhang/PycharmProjects/python-bt-sdk/pybt/sites.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="json.html">json</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="pybt.client.html#Client">pybt.client.Client</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pybt.sites.html#Sites">Sites</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="Sites">class <strong>Sites</strong></a>(<a href="pybt.client.html#Client">pybt.client.Client</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#Sites">Sites</a>(panel_address,&nbsp;api_key)<br>
+&nbsp;<br>
+网站管理相关接口<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pybt.sites.html#Sites">Sites</a></dd>
+<dd><a href="pybt.client.html#Client">pybt.client.Client</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Sites-add_dir_binding"><strong>add_dir_binding</strong></a>(self, site, domain, dirName)</dt><dd><tt>添加网站子目录域名<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;domain&nbsp;(string):&nbsp;域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dirName&nbsp;(string):&nbsp;目录名</tt></dd></dl>
+
+<dl><dt><a name="Sites-close_has_pwd"><strong>close_has_pwd</strong></a>(self, site)</dt><dd><tt>关闭网站密码访问<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-close_limit_net"><strong>close_limit_net</strong></a>(self, site)</dt><dd><tt>关闭网站流量限制<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-close_ssl_conf"><strong>close_ssl_conf</strong></a>(self, site, updateOf='1')</dt><dd><tt>关闭SSL<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;updateOf&nbsp;(str,&nbsp;optional):&nbsp;修改状态码&nbsp;(暂不明确用途).&nbsp;Defaults&nbsp;to&nbsp;"1".</tt></dd></dl>
+
+<dl><dt><a name="Sites-close_to_https"><strong>close_to_https</strong></a>(self, site)</dt><dd><tt>关闭强制HTTPS<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-create_proxy"><strong>create_proxy</strong></a>(self, cache, proxyname, cachetime, proxydir, proxysite, todomain, advanced, sitename, subfilter, type)</dt><dd><tt>获添加网站反代信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cache&nbsp;(string):&nbsp;是否缓存<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxyname&nbsp;(string):&nbsp;代理名称<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cachetime&nbsp;(string):&nbsp;缓存时长&nbsp;/小时<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxydir&nbsp;(string):&nbsp;代理目录<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxysite&nbsp;(string):&nbsp;反代URL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;todomain&nbsp;(string):&nbsp;目标域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;advanced&nbsp;(string):&nbsp;高级功能：开启代理目录<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sitename&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;subfilter&nbsp;(string):&nbsp;文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;开启或关闭&nbsp;0关;1开</tt></dd></dl>
+
+<dl><dt><a name="Sites-del_dir_binding"><strong>del_dir_binding</strong></a>(self, dirid)</dt><dd><tt>删除网站绑定子目录<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dirid&nbsp;(string):&nbsp;子目录ID</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_301_status"><strong>get_301_status</strong></a>(self, site)</dt><dd><tt>获取网站301重定向信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_dir_binding"><strong>get_dir_binding</strong></a>(self, site)</dt><dd><tt>获取网站域名绑定二级目录信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_dir_rewrite"><strong>get_dir_rewrite</strong></a>(self, dirid)</dt><dd><tt>获取网站子目录绑定伪静态信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;dirid&nbsp;(string):&nbsp;子目录ID</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_dir_user_ini"><strong>get_dir_user_ini</strong></a>(self, site)</dt><dd><tt>获取网站几项开关（防跨站、日志、密码访问)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_file_body"><strong>get_file_body</strong></a>(self, path, type)</dt><dd><tt>获取预置伪静态规则内容（文件内容）<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(string):&nbsp;规则名（站点名）<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;0-&gt;获取内置伪静态规则；1-&gt;获取当前站点伪静态规则</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_limit_net"><strong>get_limit_net</strong></a>(self, site)</dt><dd><tt>获取网站流量限制信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_php_version"><strong>get_php_version</strong></a>(self)</dt><dd><tt>获取已安装的&nbsp;PHP&nbsp;版本列表</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_proxy_list"><strong>get_proxy_list</strong></a>(self, site)</dt><dd><tt>获取网站反代信息及状态<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_rewrite_list"><strong>get_rewrite_list</strong></a>(self, site)</dt><dd><tt>获取可选的预定义伪静态列表<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_security"><strong>get_security</strong></a>(self, site)</dt><dd><tt>获取网站盗链状态及规则信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_site_id"><strong>get_site_id</strong></a>(self, site)</dt><dd><tt>获取指定站点ID&nbsp;若站点不存在则返回-1<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_site_logs"><strong>get_site_logs</strong></a>(self, site)</dt><dd><tt>获取网站日志<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_site_path"><strong>get_site_path</strong></a>(self, site)</dt><dd><tt>获取指定站点目录&nbsp;若站点不存在则返回-1</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_site_php_version"><strong>get_site_php_version</strong></a>(self)</dt><dd><tt>获取指定网站运行的PHP版本</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_ssl"><strong>get_ssl</strong></a>(self, site)</dt><dd><tt>获取SSL状态及证书详情<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-get_type_id"><strong>get_type_id</strong></a>(self, _type)</dt><dd><tt>获取分类ID，若不存在则返回0<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type&nbsp;(string):&nbsp;分类名</tt></dd></dl>
+
+<dl><dt><a name="Sites-http_to_https"><strong>http_to_https</strong></a>(self, site)</dt><dd><tt>开启强制HTTPS<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-modify_proxy"><strong>modify_proxy</strong></a>(self, cache, proxyname, cachetime, proxydir, proxysite, todomain, advanced, sitename, subfilter, type)</dt><dd><tt>修改网站反代信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cache&nbsp;(string):&nbsp;是否缓存<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxyname&nbsp;(string):&nbsp;代理名称<br>
+&nbsp;&nbsp;&nbsp;&nbsp;cachetime&nbsp;(string):&nbsp;缓存时长&nbsp;/小时<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxydir&nbsp;(string):&nbsp;代理目录<br>
+&nbsp;&nbsp;&nbsp;&nbsp;proxysite&nbsp;(string):&nbsp;反代URL<br>
+&nbsp;&nbsp;&nbsp;&nbsp;todomain&nbsp;(string):&nbsp;目标域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;advanced&nbsp;(string):&nbsp;高级功能：开启代理目录<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sitename&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;subfilter&nbsp;(string):&nbsp;文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;开启或关闭&nbsp;0关;1开</tt></dd></dl>
+
+<dl><dt><a name="Sites-save_file_body"><strong>save_file_body</strong></a>(self, path, _data, encoding='utf-8', type=0)</dt><dd><tt>保存伪静态规则内容(保存文件内容)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(string):&nbsp;规则名（站点名）<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_data&nbsp;(string):&nbsp;规则内容<br>
+&nbsp;&nbsp;&nbsp;&nbsp;encoding&nbsp;(string):&nbsp;规则编码强转utf-8<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;0-&gt;系统默认路径；1-&gt;自定义全路径</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_301_status"><strong>set_301_status</strong></a>(self, site, toDomain, srcDomain, type)</dt><dd><tt>设置网站301重定向信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;toDomain&nbsp;(string):&nbsp;目标Url<br>
+&nbsp;&nbsp;&nbsp;&nbsp;srcDomain&nbsp;(string):&nbsp;来自Url<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;类型</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_has_pwd"><strong>set_has_pwd</strong></a>(self, site, username, passwd)</dt><dd><tt>开启并设置网站密码访问<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;username&nbsp;(string):&nbsp;用户名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;passwd&nbsp;(string):&nbsp;密码</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_limit_net"><strong>set_limit_net</strong></a>(self, site, perserver, perip, limit_rate)</dt><dd><tt>设置网站流量限制信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;perserver&nbsp;(string):&nbsp;并发限制<br>
+&nbsp;&nbsp;&nbsp;&nbsp;perip&nbsp;(string):&nbsp;单IP限制<br>
+&nbsp;&nbsp;&nbsp;&nbsp;limit_rate&nbsp;(string):&nbsp;流量限制</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_php_version"><strong>set_php_version</strong></a>(self, site, php)</dt><dd><tt>修改指定网站PHP版本<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;php&nbsp;(string):&nbsp;PHP版本如73</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_security"><strong>set_security</strong></a>(self, site, fix, domains, status)</dt><dd><tt>获取网站盗链状态及规则信息<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;fix&nbsp;(string):&nbsp;URL后缀&nbsp;&nbsp;如"jpg,jpeg,gif,png,js,css"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;domains&nbsp;(string):&nbsp;许可域名&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;status&nbsp;(string):&nbsp;启用防盗链状态:&nbsp;"true"/"false"</tt></dd></dl>
+
+<dl><dt><a name="Sites-set_ssl"><strong>set_ssl</strong></a>(self, site, key, csr, type='1')</dt><dd><tt>设置SSL证书<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;key&nbsp;(string):&nbsp;证书key<br>
+&nbsp;&nbsp;&nbsp;&nbsp;csr&nbsp;(string):&nbsp;证书PEM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(str,&nbsp;optional):&nbsp;[description].&nbsp;Defaults&nbsp;to&nbsp;"1".</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_add_domain"><strong>web_add_domain</strong></a>(self, site, domain)</dt><dd><tt>添加网站域名<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;domain&nbsp;(string):&nbsp;新增的域名</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_add_site"><strong>web_add_site</strong></a>(self, site, _type, ps, ftp='false', ftp_username=None, ftp_password=None, sql='false', sql_codeing='utf8mb4', datauser=None, datapassword=None)</dt><dd><tt>创建网站<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站主域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;_type&nbsp;(string):&nbsp;网站分类名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ps&nbsp;(string):&nbsp;网站备注<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ftp&nbsp;(str,&nbsp;optional):&nbsp;是否开启FTP&nbsp;(true/false).&nbsp;Defaults&nbsp;to&nbsp;"false".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ftp_username&nbsp;(string,&nbsp;optional):&nbsp;FTP用户名.&nbsp;Defaults&nbsp;to&nbsp;None.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ftp_password&nbsp;(string,&nbsp;optional):&nbsp;FTP密码&nbsp;.&nbsp;Defaults&nbsp;to&nbsp;None.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sql&nbsp;(str,&nbsp;optional):&nbsp;是否开启SQL&nbsp;(true/false).&nbsp;Defaults&nbsp;to&nbsp;"false".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sql_codeing&nbsp;(str,&nbsp;optional):&nbsp;MySQL数据库格式,默认为utf8mb4.&nbsp;Defaults&nbsp;to&nbsp;"utf8mb4".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;datauser&nbsp;(string,&nbsp;optional):&nbsp;数据库用户名.&nbsp;Defaults&nbsp;to&nbsp;None.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;datapassword&nbsp;(string,&nbsp;optional):&nbsp;数据库密码.&nbsp;Defaults&nbsp;to&nbsp;None.</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_backup_list"><strong>web_backup_list</strong></a>(self, site, p='1', limit='5', tojs='get_site_backup')</dt><dd><tt>获取网站备份列表<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;p&nbsp;(str,&nbsp;optional):&nbsp;当前分页.&nbsp;Defaults&nbsp;to&nbsp;"1".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;limit&nbsp;(str,&nbsp;optional):&nbsp;每页取回的数据行数.&nbsp;Defaults&nbsp;to&nbsp;"5".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tojs&nbsp;(str,&nbsp;optional):&nbsp;分页&nbsp;JS&nbsp;回调,若不传则构造&nbsp;URI&nbsp;分页连接.&nbsp;Defaults&nbsp;to&nbsp;"get_site_backup".</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_del_backup"><strong>web_del_backup</strong></a>(self, id)</dt><dd><tt>删除网站备份<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;(string):&nbsp;备份列表&nbsp;ID</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_del_domain"><strong>web_del_domain</strong></a>(self, site, domain, port)</dt><dd><tt>删除网站域名<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;domain&nbsp;(string):&nbsp;删除的域名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;port&nbsp;(string):&nbsp;删除的域名的端口<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;string:&nbsp;[description]</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_delete_site"><strong>web_delete_site</strong></a>(self, site, ftp='false', database='false', path='false')</dt><dd><tt>删除网站<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ftp&nbsp;(str,&nbsp;optional):&nbsp;是否删除FTP&nbsp;(true/false).&nbsp;Defaults&nbsp;to&nbsp;"false".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;database&nbsp;(str,&nbsp;optional):&nbsp;是否删除数据库&nbsp;(true/false).&nbsp;Defaults&nbsp;to&nbsp;"false".<br>
+&nbsp;&nbsp;&nbsp;&nbsp;path&nbsp;(str,&nbsp;optional):&nbsp;是否删除站点根目录&nbsp;(true/false).&nbsp;Defaults&nbsp;to&nbsp;"false".</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_domain_list"><strong>web_domain_list</strong></a>(self, site)</dt><dd><tt>获取网站域名列表<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_get_index"><strong>web_get_index</strong></a>(self, site)</dt><dd><tt>获取网站默认文件<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_set_end_date"><strong>web_set_end_date</strong></a>(self, site, end_date)</dt><dd><tt>设置网站到期时间<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;edate&nbsp;(string):&nbsp;到期时间&nbsp;格式为xxxx-xx-xx&nbsp;若需永久请输入0000-00-00</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_set_index"><strong>web_set_index</strong></a>(self, site, index)</dt><dd><tt>设置网站默认文件<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;index&nbsp;(string):&nbsp;默认文件内容，如&nbsp;"api.php,index.php,index.html,index.htm,default.php,default.htm,default.html"</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_set_ps"><strong>web_set_ps</strong></a>(self, site, ps)</dt><dd><tt>修改网站备注<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ps&nbsp;(string):&nbsp;备注</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_site_start"><strong>web_site_start</strong></a>(self, site)</dt><dd><tt>启用网站<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_site_stop"><strong>web_site_stop</strong></a>(self, site)</dt><dd><tt>停用网站<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-web_to_backup"><strong>web_to_backup</strong></a>(self, site)</dt><dd><tt>创建网站备份<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;site&nbsp;(string):&nbsp;网站名</tt></dd></dl>
+
+<dl><dt><a name="Sites-websites"><strong>websites</strong></a>(self)</dt><dd><tt>获取网站列表</tt></dd></dl>
+
+<dl><dt><a name="Sites-webtypes"><strong>webtypes</strong></a>(self)</dt><dd><tt>获取网站分类</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pybt.client.html#Client">pybt.client.Client</a>:<br>
+<dl><dt><a name="Sites-__init__"><strong>__init__</strong></a>(self, panel_address, api_key)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="Sites-post_data"><strong>post_data</strong></a>(self, endpoint, data={})</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pybt.client.html#Client">pybt.client.Client</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module pybt.dbm</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="pybt.html"><font color="#ffffff">pybt</font></a>.dbm</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/adamzhang/PycharmProjects/python-bt-sdk/pybt/dbm.py">/Users/adamzhang/PycharmProjects/python-bt-sdk/pybt/dbm.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="pybt.client.html#Client">pybt.client.Client</a>(<a href="builtins.html#object">builtins.object</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="pybt.dbm.html#DBM">DBM</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="DBM">class <strong>DBM</strong></a>(<a href="pybt.client.html#Client">pybt.client.Client</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#DBM">DBM</a>(panel_address,&nbsp;api_key)<br>
+&nbsp;<br>
+数据库管理<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%"><dl><dt>Method resolution order:</dt>
+<dd><a href="pybt.dbm.html#DBM">DBM</a></dd>
+<dd><a href="pybt.client.html#Client">pybt.client.Client</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="DBM-db_del_backup"><strong>db_del_backup</strong></a>(self, id)</dt><dd><tt>删除sql备份<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;id&nbsp;(string):&nbsp;备份ID</tt></dd></dl>
+
+<dl><dt><a name="DBM-db_to_backup"><strong>db_to_backup</strong></a>(self, database_name)</dt><dd><tt>创建sql备份<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;database_name&nbsp;(string):&nbsp;数据库名</tt></dd></dl>
+
+<dl><dt><a name="DBM-get_db_id"><strong>get_db_id</strong></a>(self, sql_username)</dt><dd><tt>根据数据库名获取SQLID<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;sql_username&nbsp;(string):&nbsp;SQL用户名</tt></dd></dl>
+
+<dl><dt><a name="DBM-res_database_pass"><strong>res_database_pass</strong></a>(self, ftp_username, new_password)</dt><dd><tt>修改数据库账号密码<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ftp_username&nbsp;(string):&nbsp;数据库名<br>
+&nbsp;&nbsp;&nbsp;&nbsp;new_password&nbsp;(string):&nbsp;新密码</tt></dd></dl>
+
+<dl><dt><a name="DBM-web_db_list"><strong>web_db_list</strong></a>(self, page='1', limit='15', type='-1', order='id desc', tojs='', search='')</dt><dd><tt>获取SQL信息列表<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;page&nbsp;(string):&nbsp;当前分页<br>
+&nbsp;&nbsp;&nbsp;&nbsp;limit&nbsp;(string):&nbsp;取出的数据行数<br>
+&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;(string):&nbsp;分类标识&nbsp;-1:&nbsp;分部分类&nbsp;0:&nbsp;默认分类<br>
+&nbsp;&nbsp;&nbsp;&nbsp;order&nbsp;(string):&nbsp;排序规则&nbsp;使用&nbsp;id&nbsp;降序：id&nbsp;desc&nbsp;使用名称升序：name&nbsp;desc<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tojs&nbsp;(string):&nbsp;分页&nbsp;JS&nbsp;回调,若不传则构造&nbsp;URI&nbsp;分页连接<br>
+&nbsp;&nbsp;&nbsp;&nbsp;search&nbsp;(string):&nbsp;搜索内容</tt></dd></dl>
+
+<hr>
+Methods inherited from <a href="pybt.client.html#Client">pybt.client.Client</a>:<br>
+<dl><dt><a name="DBM-__init__"><strong>__init__</strong></a>(self, panel_address, api_key)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="DBM-post_data"><strong>post_data</strong></a>(self, endpoint, data={})</dt></dl>
+
+<hr>
+Data descriptors inherited from <a href="pybt.client.html#Client">pybt.client.Client</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
