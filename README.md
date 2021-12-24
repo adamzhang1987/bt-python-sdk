@@ -51,25 +51,6 @@ python setup.py install
 # Documentation
 #### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 
-# Testing
-#### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：
-```python
-# config.py
-CONFIG = {
-    "panel_address": YOUR_PANEL_ADDRESS,
-    "api_key": YOUR_API_KEY
-}
-```
-#### 然后执行：
-```bash
-python -m unittest
-```
-#### 或者
-```bash
-pytest
-```
-> 祝您好运! :star:
-
 # 功能模块
 > 具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 <details><summary>System: 系统状态相关接口</summary>
@@ -159,6 +140,25 @@ pytest
 * `deployment  宝塔一键部署列表`
 * `setup_package 部署任务`
 </details>
+
+# Testing
+#### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：
+```python
+# config.py
+CONFIG = {
+    "panel_address": YOUR_PANEL_ADDRESS,
+    "api_key": YOUR_API_KEY
+}
+```
+#### 然后执行：
+```bash
+python -m unittest
+```
+#### 或者
+```bash
+pytest
+```
+> 祝您好运! :star:
 
 # TODO
 * 完善测试用例
