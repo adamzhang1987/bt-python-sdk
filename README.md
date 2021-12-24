@@ -1,8 +1,8 @@
 # About
 
-**Pybt** is a BaoTa panel python sdk. 
+#### **Pybt** is a BaoTa panel python sdk. 
 ##
-**Pybt** 是一个宝塔面板API的Python版本sdk封装库。
+#### **Pybt** 是一个宝塔面板API的Python版本sdk封装库。
 ##
 > 公司很多服务器都装了宝塔面板，通过宝塔来部署、安装、维护一些服务，服务器的数量上以后，导致了维护的不方便，这个时候就想使用宝塔提供的API来开发一个运维平台，通过平台来统一监听服务器状态和执行一些简单运维操作。网上找了一下，没有特别满意的Python封装，干脆自己撸了一套。
 
@@ -10,6 +10,7 @@
 #### 编写的时候参考了两位老哥的代码
 * Abudu： https://github.com/am-abudu/BtPanel-API-Python-SDK
 * meimz：https://github.com/meimz/mbt
+* 官方API文档： https://www.bt.cn/api-doc.pdf
 
 # Installation
 ```bash
@@ -51,7 +52,7 @@ python setup.py install
 #### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 
 # Testing
-#### 执行单元测试前先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容：
+#### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：
 ```python
 # config.py
 CONFIG = {
@@ -165,3 +166,5 @@ pytest
 * 完善exapmles
 * 打包提交PYPI
 * 测试中发现官方API接口有若干bug，需要提交pull request修复
+
+Powered by [bt APIs](https://www.bt.cn/bbs/thread-20376-1-1.html).
