@@ -48,11 +48,8 @@ python setup.py install
   'inodes': ['72089600', '360084', '71729516', '1%']}]
 ```
 
-# Documentation
-#### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
-
 # 功能模块
-> 具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>，点击小三角展开查看模块方法
+> 点击小三角展开查看模块方法，具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 <details><summary>System: 系统状态相关接口</summary>
 <p>
 
@@ -140,6 +137,9 @@ python setup.py install
 * `deployment  宝塔一键部署列表`
 * `setup_package 部署任务`
 </details>
+
+# Documentation
+#### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 
 # Testing
 #### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：
