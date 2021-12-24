@@ -52,7 +52,7 @@ python setup.py install
 #### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
 
 # 功能模块
-> 具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
+> 具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>，点击小三角展开查看模块方法
 <details><summary>System: 系统状态相关接口</summary>
 <p>
 
