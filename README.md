@@ -18,7 +18,7 @@ pip install bt-python-sdk
 ```
 #### or
 ```bash
-git clone https://github.com/adamzhang1987/python-bt-sdk.git
+git clone https://github.com/adamzhang1987/bt-python-sdk.git
 python setup.py install
 ```
 
@@ -154,7 +154,7 @@ python setup.py install
 ```
 
 # 功能模块
-> 点击小三角展开查看模块方法，具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
+> 点击小三角展开查看模块方法，具体模块参数见文档目录 <a href="https://github.com/adamzhang1987/bt-python-sdk/tree/main/docs">docs/</a>
 <details><summary>System: 系统状态相关接口</summary>
 <p>
 
@@ -244,7 +244,7 @@ python setup.py install
 </details>
 
 # Documentation
-#### 详见 <a href="https://github.com/adamzhang1987/python-bt-sdk/tree/main/docs">docs/</a>
+#### 详见 <a href="https://github.com/adamzhang1987/bt-python-sdk/tree/main/docs">docs/</a>
 
 # Testing
 #### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：
