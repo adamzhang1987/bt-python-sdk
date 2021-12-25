@@ -2,7 +2,7 @@ import requests
 import time
 
 from .token import get_token
-from .exception import *
+from .exceptions import *
 
 
 class Client:

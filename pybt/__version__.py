@@ -1,0 +1,8 @@
+__title__ = 'pybt'
+__description__ = 'Pybt is a BaoTa panel python sdk.'
+__url__ = 'https://github.com/adamzhang1987/python-bt-sdk'
+__version__ = '0.1.0'
+__author__ = 'Adam Zhang'
+__author_email__ = 'adamzhang1987@gmail.com'
+__license__ = 'MIT'
+__copyright__ = 'Copyright 2021 Adam Zhang'

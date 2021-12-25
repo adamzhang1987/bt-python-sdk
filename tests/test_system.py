@@ -2,7 +2,7 @@ import unittest
 import warnings
 
 from pybt.system import System
-from pybt.exception import InvalidAPIKey
+from pybt.exceptions import InvalidAPIKey
 from .config import CONFIG
 
 

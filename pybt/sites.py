@@ -48,7 +48,7 @@ class Sites(Client):
         Args:
             site (string): 网站名
         """
-        data = self.websites(self)["data"]
+        data = self.websites()["data"]
         for i in data:
             if i["name"] == site:
                 return i["id"]
@@ -57,7 +57,7 @@ class Sites(Client):
     def get_site_path(self, site):
         """获取指定站点目录 若站点不存在则返回-1
         """
-        data = self.websites(self)["data"]
+        data = self.websites()["data"]
         for i in data:
             if i["name"] == site:
                 return i["path"]
@@ -72,7 +72,7 @@ class Sites(Client):
             passwd (string): 密码
         """
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["username"] = username
         data["password"] = passwd
         endpoint = self.config["SetHasPwd"]
@@ -85,7 +85,7 @@ class Sites(Client):
             site (string): 网站名
         """
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         endpoint = self.config["CloseHasPwd"]
         return self.post_data(endpoint, data=data)
 
@@ -96,8 +96,8 @@ class Sites(Client):
             site (string): 网站名
         """
         data = {}
-        data["id"] = self.get_site_id(self, site)
-        data["path"] = self.get_site_path(self, site)
+        data["id"] = self.get_site_id(site)
+        data["path"] = self.get_site_path(site)
         endpoint = self.config["GetDirUserINI"]
         return self.post_data(endpoint, data=data)
 
@@ -107,7 +107,7 @@ class Sites(Client):
         Args:
             _type (string): 分类名
         """
-        data = self.webtypes(self)
+        data = self.webtypes()
         for i in data:
             if i["name"] == _type:
                 return i["id"]
@@ -131,9 +131,9 @@ class Sites(Client):
         data = {}
         data["webname"] = json.dumps({"domain":site,"domainlist":[],"count":0})
         data["path"] = "/www/wwwroot/" + site
-        data["type_id"] = self.get_type_id(self, _type)
+        data["type_id"] = self.get_type_id(_type)
         data["type"] = "PHP"
-        data["version"] = self.get_php_version(self)[-1]["version"]
+        data["version"] = self.get_php_version()[-1]["version"]
         data["port"] = "80"
         data["ps"] = ps
         data["ftp"] = ftp
@@ -159,7 +159,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebDeleteSite"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["webname"] = site
         data["ftp"] = ftp
         data["database"] = database 
@@ -174,7 +174,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebSiteStop"]
         data = {}
-        data["id"] = str(self.get_site_id(self, site))
+        data["id"] = str(self.get_site_id(site))
         data["name"] = site
         return self.post_data(endpoint, data=data)
 
@@ -186,7 +186,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebSiteStart"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["name"] = site
         return self.post_data(endpoint, data=data)
 
@@ -199,7 +199,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebSetEdate"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["edate"] = end_date
         return self.post_data(endpoint, data=data)
 
@@ -212,7 +212,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebSetPs"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["ps"] = ps
         return self.post_data(endpoint, data=data)
 
@@ -227,7 +227,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebBackupList"]
         data = {}
-        data["search"] = self.get_site_id(self, site)
+        data["search"] = self.get_site_id(site)
         data["p"] = p
         data["limit"] = limit
         data["type"] = "0"
@@ -242,7 +242,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebToBackup"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         return self.post_data(endpoint, data=data)
 
     def web_del_backup(self, id):
@@ -264,7 +264,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebDomainList"]
         data = {}
-        data["search"] = self.get_site_id(self, site)
+        data["search"] = self.get_site_id(site)
         data["list"] = "true"
         return self.post_data(endpoint, data=data)
 
@@ -276,7 +276,7 @@ class Sites(Client):
         """
         endpoint = self.config["GetDirBinding"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         return self.post_data(endpoint, data=data)
 
     def add_dir_binding(self, site, domain, dirName):
@@ -289,7 +289,7 @@ class Sites(Client):
         """
         endpoint = self.config["AddDirBinding"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["domain"] = domain
         data["dirName"] = dirName
         return self.post_data(endpoint, data=data)
@@ -325,7 +325,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebAddDomain"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["webname"] = site
         data["domain"] = domain
         return self.post_data(endpoint, data=data)
@@ -343,7 +343,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebDelDomain"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["webname"] = site
         data["domain"] = domain
         data["port"] = port
@@ -368,7 +368,7 @@ class Sites(Client):
         """
         endpoint = self.config["GetSecurity"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["name"] = site
         return self.post_data(endpoint, data=data)
 
@@ -383,7 +383,7 @@ class Sites(Client):
         """
         endpoint = self.config["SetSecurity"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["name"] = site
         data["fix"] = fix
         data["domains"] = domains
@@ -461,7 +461,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebGetIndex"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         return self.post_data(endpoint, data=data)
 
     def web_set_index(self, site, index):
@@ -473,7 +473,7 @@ class Sites(Client):
         """
         endpoint = self.config["WebSetIndex"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["Index"] = index
         return self.post_data(endpoint, data=data)
 
@@ -485,7 +485,7 @@ class Sites(Client):
         """
         endpoint = self.config["GetLimitNet"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         return self.post_data(endpoint, data=data)
 
     def set_limit_net(self, site, perserver, perip, limit_rate):
@@ -499,7 +499,7 @@ class Sites(Client):
         """
         endpoint = self.config["GetLimitNet"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         data["perserver"] = perserver
         data["perip"] = perip
         data["limit_rate"] = limit_rate
@@ -513,7 +513,7 @@ class Sites(Client):
         """
         endpoint = self.config["CloseLimitNet"]
         data = {}
-        data["id"] = self.get_site_id(self, site)
+        data["id"] = self.get_site_id(site)
         return self.post_data(endpoint, data=data)
 
     def get_301_status(self, site):

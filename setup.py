@@ -1,9 +1,13 @@
 import setuptools
 
+with open("README.rst", "r") as f:
+    long_description = f.read()
+
 setuptools.setup(
-    name='pybt',
+    name='bt-python-sdk',
     version='0.1.0',
     description='Pybt is a BaoTa panel python sdk.',
+    long_description=long_description,
     author='Adam Zhang',
     author_email='adamzhang1987@gmail.com',
     license='MIT',
@@ -17,8 +21,8 @@ setuptools.setup(
         'requests',
     ],
     classifiers=[
-        "Programming Language :: Python :: 3"
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
     ],
-    include_package_data=True,
-    zip_safe=False,
 )
