@@ -26,9 +26,5 @@ sphinx:
 
 # Optionally declare the Python requirements required to build your docs
 python:
-  version: "3.7"
-  install:
-  - method: pip
-    path: .
-    extra_requirements:
-    - pyqt
+   install:
+   - requirements: docs/requirements.txt
