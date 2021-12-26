@@ -9,7 +9,6 @@ Welcome to bt-python-sdk's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   :numbered:
    
    README
    pyqt/index

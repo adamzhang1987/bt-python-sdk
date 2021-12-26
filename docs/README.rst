@@ -5,6 +5,9 @@ About
 
 *Pybt* 是一个宝塔面板API的Python版本sdk封装库
 
+Documentation:
+https://bt-python-sdk.readthedocs.io/en/latest/?
+
 Examples
 ========
 

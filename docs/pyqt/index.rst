@@ -4,12 +4,13 @@ pybt modules
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+   :numbered: 2
 
-   system
-   sites
-   ftp
-   dbm
-   plugin
-   client
-   token
-   exceptions
+   modules/system
+   modules/sites
+   modules/ftp
+   modules/dbm
+   modules/plugin
+   modules/client
+   modules/token
+   modules/exceptions
