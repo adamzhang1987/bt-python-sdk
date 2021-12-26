@@ -6,6 +6,9 @@
 ##
 > 公司很多服务器都装了宝塔面板，通过宝塔来部署、安装、维护一些服务，服务器的数量上以后，导致了维护的不方便，这个时候就想使用宝塔提供的API来开发一个运维平台，通过平台来统一监听服务器状态和执行一些简单运维操作。网上找了一下，没有特别满意的Python封装，干脆自己撸了一套。
 
+# Documentation
+#### 详见 <a href="https://bt-python-sdk.readthedocs.io/en/latest/?">在线文档/</a>
+
 # 感谢
 #### 编写的时候参考了两位老哥的代码
 * Abudu： https://github.com/am-abudu/BtPanel-API-Python-SDK
@@ -242,9 +245,6 @@ python setup.py install
 * `deployment  宝塔一键部署列表`
 * `setup_package 部署任务`
 </details>
-
-# Documentation
-#### 详见 <a href="https://bt-python-sdk.readthedocs.io/en/latest/?">在线文档/</a>
 
 # Testing
 #### 执行单元测试前，请先在 `tests` 目录下新建一个 `config.py` 的文件，文件内容如下：

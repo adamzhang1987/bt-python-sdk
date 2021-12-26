@@ -1,22 +1,23 @@
 import setuptools
+from pybt import __version__, __url__, __author__, __author_email__, __license__, __description__
 
-with open("docs/README.rst", "r") as f:
+with open("docs/source/README.rst", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
     name='bt-python-sdk',
-    version='0.1.1',
-    description='Pybt is a BaoTa panel python sdk.',
+    version=__version__,
+    description=__description__,
     long_description=long_description,
-    author='Adam Zhang',
-    author_email='adamzhang1987@gmail.com',
-    license='MIT',
+    author=__author__,
+    author_email=__author_email__,
+    license=__license__,
     packages=[
         'examples',
         'examples.system',
         'pybt'
         ],
-    url='https://github.com/adamzhang1987/bt-python-sdk',
+    url=__url__,
     install_requires=[
         'requests',
     ],
