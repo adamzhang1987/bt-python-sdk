@@ -1,7 +1,11 @@
 from hashlib import md5
 
 def get_md5(s):
-    """Get md5 string"""
+    """Get md5 string
+    
+    Args:
+        s (str): The string.
+    """
     m = md5()
     m.update(s.encode("utf-8"))
     return m.hexdigest()
