@@ -124,12 +124,7 @@ instance/
 .scrapy
 
 # Sphinx documentation
-_build/
-_static/
-_templates/
-Makefile
-conf.py
-make.bat
+docs/_build/
 
 # PyBuilder
 target/
