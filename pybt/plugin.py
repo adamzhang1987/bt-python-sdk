@@ -19,9 +19,9 @@ class Plugin(Client):
         """宝塔一键部署执行
 
         Args:
-            dname (string): 部署程序名
-            site_name (string): 部署到网站名
-            php_version (string): PHP版本
+            dname (str): 部署程序名
+            site_name (str): 部署到网站名
+            php_version (str): PHP版本
         """
         endpoint = self.config["SetupPackage"]
         data = {}

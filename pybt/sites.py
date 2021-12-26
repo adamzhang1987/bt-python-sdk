@@ -33,8 +33,8 @@ class Sites(Client):
         """修改指定网站PHP版本
 
         Args:
-            site (string): 网站名
-            php (string): PHP版本如73
+            site (str): 网站名
+            php (str): PHP版本如73
         """
         data = {}
         data["siteName"] = site
@@ -46,7 +46,7 @@ class Sites(Client):
         """获取指定站点ID 若站点不存在则返回-1
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         data = self.websites()["data"]
         for i in data:
@@ -67,9 +67,9 @@ class Sites(Client):
         """开启并设置网站密码访问
 
         Args:
-            site (string): 网站名
-            username (string): 用户名
-            passwd (string): 密码
+            site (str): 网站名
+            username (str): 用户名
+            passwd (str): 密码
         """
         data = {}
         data["id"] = self.get_site_id(site)
@@ -82,7 +82,7 @@ class Sites(Client):
         """关闭网站密码访问
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         data = {}
         data["id"] = self.get_site_id(site)
@@ -93,7 +93,7 @@ class Sites(Client):
         """获取网站几项开关（防跨站、日志、密码访问)
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         data = {}
         data["id"] = self.get_site_id(site)
@@ -105,7 +105,7 @@ class Sites(Client):
         """获取分类ID，若不存在则返回0
 
         Args:
-            _type (string): 分类名
+            _type (str): 分类名
         """
         data = self.webtypes()
         for i in data:
@@ -117,16 +117,16 @@ class Sites(Client):
         """创建网站
 
         Args:
-            site (string): 网站主域名
-            _type (string): 网站分类名
-            ps (string): 网站备注
+            site (str): 网站主域名
+            _type (str): 网站分类名
+            ps (str): 网站备注
             ftp (str, optional): 是否开启FTP (true/false). Defaults to "false".
-            ftp_username (string, optional): FTP用户名. Defaults to None.
-            ftp_password (string, optional): FTP密码 . Defaults to None.
+            ftp_username (str, optional): FTP用户名. Defaults to None.
+            ftp_password (str, optional): FTP密码 . Defaults to None.
             sql (str, optional): 是否开启SQL (true/false). Defaults to "false".
             sql_codeing (str, optional): MySQL数据库格式,默认为utf8mb4. Defaults to "utf8mb4".
-            datauser (string, optional): 数据库用户名. Defaults to None.
-            datapassword (string, optional): 数据库密码. Defaults to None.
+            datauser (str, optional): 数据库用户名. Defaults to None.
+            datapassword (str, optional): 数据库密码. Defaults to None.
         """
         data = {}
         data["webname"] = json.dumps({"domain":site,"domainlist":[],"count":0})
@@ -152,7 +152,7 @@ class Sites(Client):
         """删除网站
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
             ftp (str, optional): 是否删除FTP (true/false). Defaults to "false".
             database (str, optional): 是否删除数据库 (true/false). Defaults to "false".
             path (str, optional): 是否删除站点根目录 (true/false). Defaults to "false".
@@ -170,7 +170,7 @@ class Sites(Client):
         """停用网站
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["WebSiteStop"]
         data = {}
@@ -182,7 +182,7 @@ class Sites(Client):
         """启用网站
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["WebSiteStart"]
         data = {}
@@ -194,8 +194,8 @@ class Sites(Client):
         """设置网站到期时间
 
         Args:
-            site (string): 网站名
-            edate (string): 到期时间 格式为xxxx-xx-xx 若需永久请输入0000-00-00
+            site (str): 网站名
+            edate (str): 到期时间 格式为xxxx-xx-xx 若需永久请输入0000-00-00
         """
         endpoint = self.config["WebSetEdate"]
         data = {}
@@ -207,8 +207,8 @@ class Sites(Client):
         """修改网站备注
 
         Args:
-            site (string): 网站名
-            ps (string): 备注
+            site (str): 网站名
+            ps (str): 备注
         """
         endpoint = self.config["WebSetPs"]
         data = {}
@@ -220,7 +220,7 @@ class Sites(Client):
         """获取网站备份列表
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
             p (str, optional): 当前分页. Defaults to "1".
             limit (str, optional): 每页取回的数据行数. Defaults to "5".
             tojs (str, optional): 分页 JS 回调,若不传则构造 URI 分页连接. Defaults to "get_site_backup".
@@ -238,7 +238,7 @@ class Sites(Client):
         """创建网站备份
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["WebToBackup"]
         data = {}
@@ -249,7 +249,7 @@ class Sites(Client):
         """删除网站备份
 
         Args:
-            id (string): 备份列表 ID
+            id (str): 备份列表 ID
         """
         endpoint = self.config["WebDelBackup"]
         data = {}
@@ -260,7 +260,7 @@ class Sites(Client):
         """获取网站域名列表
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["WebDomainList"]
         data = {}
@@ -272,7 +272,7 @@ class Sites(Client):
         """获取网站域名绑定二级目录信息
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetDirBinding"]
         data = {}
@@ -283,9 +283,9 @@ class Sites(Client):
         """添加网站子目录域名
 
         Args:
-            site (string): 网站名
-            domain (string): 域名
-            dirName (string): 目录名
+            site (str): 网站名
+            domain (str): 域名
+            dirName (str): 目录名
         """
         endpoint = self.config["AddDirBinding"]
         data = {}
@@ -298,7 +298,7 @@ class Sites(Client):
         """删除网站绑定子目录
 
         Args:
-            dirid (string): 子目录ID
+            dirid (str): 子目录ID
         """
         endpoint = self.config["DelDirBinding"]
         data = {}
@@ -309,7 +309,7 @@ class Sites(Client):
         """获取网站子目录绑定伪静态信息
 
         Args:
-            dirid (string): 子目录ID
+            dirid (str): 子目录ID
         """
         endpoint = self.config["GetDirRewrite"]
         data = {}
@@ -320,8 +320,8 @@ class Sites(Client):
         """添加网站域名
 
         Args:
-            site (string): 网站名
-            domain (string): 新增的域名
+            site (str): 网站名
+            domain (str): 新增的域名
         """
         endpoint = self.config["WebAddDomain"]
         data = {}
@@ -334,12 +334,12 @@ class Sites(Client):
         """删除网站域名
 
         Args:
-            site (string): 网站名
-            domain (string): 删除的域名
-            port (string): 删除的域名的端口
+            site (str): 网站名
+            domain (str): 删除的域名
+            port (str): 删除的域名的端口
 
         Returns:
-            string: [description]
+            str: [description]
         """
         endpoint = self.config["WebDelDomain"]
         data = {}
@@ -353,7 +353,7 @@ class Sites(Client):
         """获取网站日志
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetSiteLogs"]
         data = {}
@@ -364,7 +364,7 @@ class Sites(Client):
         """获取网站盗链状态及规则信息
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetSecurity"]
         data = {}
@@ -376,10 +376,10 @@ class Sites(Client):
         """获取网站盗链状态及规则信息
 
         Args:
-            site (string): 网站名
-            fix (string): URL后缀  如"jpg,jpeg,gif,png,js,css"
-            domains (string): 许可域名  
-            status (string): 启用防盗链状态: "true"/"false"
+            site (str): 网站名
+            fix (str): URL后缀  如"jpg,jpeg,gif,png,js,css"
+            domains (str): 许可域名  
+            status (str): 启用防盗链状态: "true"/"false"
         """
         endpoint = self.config["SetSecurity"]
         data = {}
@@ -394,7 +394,7 @@ class Sites(Client):
         """获取SSL状态及证书详情
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetSSL"]
         data = {}
@@ -405,7 +405,7 @@ class Sites(Client):
         """开启强制HTTPS
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["HttpToHttps"]
         data = {}
@@ -416,7 +416,7 @@ class Sites(Client):
         """关闭强制HTTPS
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["CloseToHttps"]
         data = {}
@@ -427,9 +427,9 @@ class Sites(Client):
         """设置SSL证书
 
         Args:
-            site (string): 域名
-            key (string): 证书key
-            csr (string): 证书PEM
+            site (str): 域名
+            key (str): 证书key
+            csr (str): 证书PEM
             type (str, optional): [description]. Defaults to "1".
         """
         endpoint = self.config["SetSSL"]
@@ -444,7 +444,7 @@ class Sites(Client):
         """关闭SSL
 
         Args:
-            site (string): 域名
+            site (str): 域名
             updateOf (str, optional): 修改状态码 (暂不明确用途). Defaults to "1".
         """
         endpoint = self.config["CloseSSLConf"]
@@ -457,7 +457,7 @@ class Sites(Client):
         """获取网站默认文件
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["WebGetIndex"]
         data = {}
@@ -468,8 +468,8 @@ class Sites(Client):
         """设置网站默认文件
 
         Args:
-            site (string): 网站名
-            index (string): 默认文件内容，如 "api.php,index.php,index.html,index.htm,default.php,default.htm,default.html"
+            site (str): 网站名
+            index (str): 默认文件内容，如 "api.php,index.php,index.html,index.htm,default.php,default.htm,default.html"
         """
         endpoint = self.config["WebSetIndex"]
         data = {}
@@ -481,7 +481,7 @@ class Sites(Client):
         """获取网站流量限制信息
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetLimitNet"]
         data = {}
@@ -492,10 +492,10 @@ class Sites(Client):
         """设置网站流量限制信息
 
         Args:
-            site (string): 网站名
-            perserver (string): 并发限制
-            perip (string): 单IP限制
-            limit_rate (string): 流量限制
+            site (str): 网站名
+            perserver (str): 并发限制
+            perip (str): 单IP限制
+            limit_rate (str): 流量限制
         """
         endpoint = self.config["GetLimitNet"]
         data = {}
@@ -509,7 +509,7 @@ class Sites(Client):
         """关闭网站流量限制
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["CloseLimitNet"]
         data = {}
@@ -520,7 +520,7 @@ class Sites(Client):
         """获取网站301重定向信息
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["Get301Status"]
         data = {}
@@ -531,10 +531,10 @@ class Sites(Client):
         """设置网站301重定向信息
 
         Args:
-            site (string): 网站名
-            toDomain (string): 目标Url
-            srcDomain (string): 来自Url
-            type (string): 类型
+            site (str): 网站名
+            toDomain (str): 目标Url
+            srcDomain (str): 来自Url
+            type (str): 类型
         """
         endpoint = self.config["Set301Status"]
         data = {}
@@ -548,7 +548,7 @@ class Sites(Client):
         """获取可选的预定义伪静态列表
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetRewriteList"]
         data = {}
@@ -559,8 +559,8 @@ class Sites(Client):
         """获取预置伪静态规则内容（文件内容）
 
         Args:
-            path (string): 规则名（站点名）
-            type (string): 0->获取内置伪静态规则；1->获取当前站点伪静态规则
+            path (str): 规则名（站点名）
+            type (str): 0->获取内置伪静态规则；1->获取当前站点伪静态规则
         """
         endpoint = self.config["GetFileBody"]
         data = {}
@@ -584,10 +584,10 @@ class Sites(Client):
         """保存伪静态规则内容(保存文件内容)
 
         Args:
-            path (string): 规则名（站点名）
-            _data (string): 规则内容
-            encoding (string): 规则编码强转utf-8
-            type (string): 0->系统默认路径；1->自定义全路径
+            path (str): 规则名（站点名）
+            _data (str): 规则内容
+            encoding (str): 规则编码强转utf-8
+            type (str): 0->系统默认路径；1->自定义全路径
         """
         endpoint = self.config["SaveFileBody"]
         data = {}
@@ -604,7 +604,7 @@ class Sites(Client):
         """获取网站反代信息及状态
 
         Args:
-            site (string): 网站名
+            site (str): 网站名
         """
         endpoint = self.config["GetProxyList"]
         data = {}
@@ -615,16 +615,16 @@ class Sites(Client):
         """修改网站反代信息
 
         Args:
-            cache (string): 是否缓存
-            proxyname (string): 代理名称
-            cachetime (string): 缓存时长 /小时
-            proxydir (string): 代理目录
-            proxysite (string): 反代URL
-            todomain (string): 目标域名
-            advanced (string): 高级功能：开启代理目录
-            sitename (string): 网站名
-            subfilter (string): 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
-            type (string): 开启或关闭 0关;1开
+            cache (str): 是否缓存
+            proxyname (str): 代理名称
+            cachetime (str): 缓存时长 /小时
+            proxydir (str): 代理目录
+            proxysite (str): 反代URL
+            todomain (str): 目标域名
+            advanced (str): 高级功能：开启代理目录
+            sitename (str): 网站名
+            subfilter (str): 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
+            type (str): 开启或关闭 0关;1开
         """
         endpoint = self.config["ModifyProxy"]
         data = {}
@@ -644,16 +644,16 @@ class Sites(Client):
         """获添加网站反代信息
 
         Args:
-            cache (string): 是否缓存
-            proxyname (string): 代理名称
-            cachetime (string): 缓存时长 /小时
-            proxydir (string): 代理目录
-            proxysite (string): 反代URL
-            todomain (string): 目标域名
-            advanced (string): 高级功能：开启代理目录
-            sitename (string): 网站名
-            subfilter (string): 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
-            type (string): 开启或关闭 0关;1开
+            cache (str): 是否缓存
+            proxyname (str): 代理名称
+            cachetime (str): 缓存时长 /小时
+            proxydir (str): 代理目录
+            proxysite (str): 反代URL
+            todomain (str): 目标域名
+            advanced (str): 高级功能：开启代理目录
+            sitename (str): 网站名
+            subfilter (str): 文本替换json格式[{"sub1":"百度","sub2":"白底"},{"sub1":"","sub2":""}]
+            type (str): 开启或关闭 0关;1开
         """
         endpoint = self.config["CreateProxy"]
         data = {}

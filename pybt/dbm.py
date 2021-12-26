@@ -6,12 +6,12 @@ class DBM(Client):
         """获取SQL信息列表
 
         Args:
-            page (string): 当前分页
-            limit (string): 取出的数据行数
-            type (string): 分类标识 -1: 分部分类 0: 默认分类
-            order (string): 排序规则 使用 id 降序：id desc 使用名称升序：name desc
-            tojs (string): 分页 JS 回调,若不传则构造 URI 分页连接
-            search (string): 搜索内容
+            page (str): 当前分页
+            limit (str): 取出的数据行数
+            type (str): 分类标识 -1: 分部分类 0: 默认分类
+            order (str): 排序规则 使用 id 降序：id desc 使用名称升序：name desc
+            tojs (str): 分页 JS 回调,若不传则构造 URI 分页连接
+            search (str): 搜索内容
         """
         endpoint = self.config["WebSqlList"]
         data = {}
@@ -27,7 +27,7 @@ class DBM(Client):
         """根据数据库名获取SQLID
 
         Args:
-            sql_username (string): SQL用户名
+            sql_username (str): SQL用户名
         """
         data = {}
         for i in data['data']:
@@ -39,8 +39,8 @@ class DBM(Client):
         """修改数据库账号密码
 
         Args:
-            ftp_username (string): 数据库名
-            new_password (string): 新密码
+            ftp_username (str): 数据库名
+            new_password (str): 新密码
         """
         endpoint = self.config["ResDatabasePass"]
         data = {}
@@ -53,7 +53,7 @@ class DBM(Client):
         """创建sql备份
 
         Args:
-            database_name (string): 数据库名
+            database_name (str): 数据库名
         """
         endpoint = self.config["SQLToBackup"]
         data = {}
@@ -64,7 +64,7 @@ class DBM(Client):
         """删除sql备份
 
         Args:
-            id (string): 备份ID
+            id (str): 备份ID
         """
         endpoint = self.config["SQLDelBackup"]
         data = {}

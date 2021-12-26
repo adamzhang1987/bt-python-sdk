@@ -29,7 +29,7 @@ class Ftp(Client):
         """根据Ftp_Username获取FTPID
         
         Args:
-            ftp_username (string): 用户名
+            ftp_username (str): 用户名
         """
         data = self.web_ftp_list()
         for i in data['data']:
@@ -41,8 +41,8 @@ class Ftp(Client):
         """修改FTP账号密码
          
         Args:
-            ftp_username (string): 用户名
-            new_password (string): 密码
+            ftp_username (str): 用户名
+            new_password (str): 密码
         """
         endpoint = self.config["SetUserPassword"]
         data = {}
@@ -57,8 +57,8 @@ class Ftp(Client):
         status       
 
         Args:
-            ftp_username (string): 用户名
-            status (string): 状态 0->关闭;1->开启
+            ftp_username (str): 用户名
+            status (str): 状态 0->关闭;1->开启
         """
         endpoint = self.config["SetStatus"]
         data = {}

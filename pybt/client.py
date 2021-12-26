@@ -6,7 +6,15 @@ from .exceptions import *
 
 
 class Client:
+    """The basic client class
+    """
     def __init__(self, panel_address, api_key):
+        """Initialize the client
+        
+        Args:
+            panel_address (str): The panel address.
+            api_key (str): The API key.
+        """
         self.__panel_address = panel_address
         self.__api_key = api_key
         self.session = requests.Session()
@@ -75,6 +83,7 @@ class Client:
                     }
 
     def __get_key(self):
+        """Get the key for the request"""
         now_time = time.time()
         p_data = {
             "request_token": get_token(now_time, self.__api_key),
@@ -83,6 +92,15 @@ class Client:
         return p_data
     
     def post_data(self, endpoint, data={}):
+        """Post data to the panel
+        
+        Args:
+            endpoint (str): The request endpoint.
+            data (dict): The post body data.
+            
+        Raises:
+            ConnectionRefused, InvalidAPIKey, IPBlocked, BadRequest
+        """
         url = self.__panel_address + endpoint
         body = self.__get_key()
         

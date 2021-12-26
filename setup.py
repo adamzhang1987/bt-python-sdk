@@ -1,6 +1,6 @@
 import setuptools
 
-with open("README.rst", "r") as f:
+with open("docs/README.rst", "r") as f:
     long_description = f.read()
 
 setuptools.setup(
