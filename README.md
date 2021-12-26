@@ -1,3 +1,4 @@
+[![Documentation Status](https://readthedocs.org/projects/bt-python-sdk/badge/?version=latest)](https://bt-python-sdk.readthedocs.io/en/latest/?badge=latest)
 # About
 
 #### **Pybt** is a BaoTa panel python sdk. 
