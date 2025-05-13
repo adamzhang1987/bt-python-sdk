@@ -12,7 +12,7 @@ Welcome to bt-python-sdk's documentation!
    
    README
    README_CN
-   pyqt/index
+   pybt/index
 
 Indices and tables
 ==================

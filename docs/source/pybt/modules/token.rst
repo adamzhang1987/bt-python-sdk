@@ -1,7 +1,7 @@
-pybt.sites
+pybt.core.token
 **********************************
 
-.. automodule:: pybt.sites
+.. automodule:: pybt.core.token
     :members:
     :undoc-members:
     :special-members: __init__, __name__

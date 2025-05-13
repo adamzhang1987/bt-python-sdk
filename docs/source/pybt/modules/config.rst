@@ -1,7 +1,7 @@
-pybt.ftp
+pybt.core.config
 **********************************
 
-.. automodule:: pybt.ftp
+.. automodule:: pybt.core.config
     :members:
     :undoc-members:
     :special-members: __init__, __name__

@@ -1,7 +1,7 @@
-pybt.token
+pybt.api.system
 **********************************
 
-.. automodule:: pybt.token
+.. automodule:: pybt.api.system
     :members:
     :undoc-members:
     :special-members: __init__, __name__

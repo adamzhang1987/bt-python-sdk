@@ -1,8 +1,7 @@
-pybt.dbm
+pybt.utils.logger
 **********************************
 
-.. automodule:: pybt.dbm
+.. automodule:: pybt.utils.logger
     :members:
     :undoc-members:
-    :special-members: __init__, __name__
     :private-members:

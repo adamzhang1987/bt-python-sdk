@@ -1,7 +1,7 @@
 __title__ = 'pybt'
 __description__ = 'Pybt is a python sdk for BT PANEL.'
 __url__ = 'https://github.com/adamzhang1987/bt-python-sdk'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Adam Zhang'
 __author_email__ = 'adamzhang1987@gmail.com'
 __license__ = 'MIT'

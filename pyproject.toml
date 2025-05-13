@@ -1,6 +1,6 @@
 [project]
 name = "bt-python-sdk"
-version = "1.0.0"
+version = "1.0.1"
 authors = [
   { name="Adam Zhang", email="adamzhang1987@gmail.com" },
 ]
