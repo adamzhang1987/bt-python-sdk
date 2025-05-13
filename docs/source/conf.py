@@ -70,17 +70,14 @@ html_static_path = ['_static']
 # for a list of supported languages.
 language = 'en'
 
-# List of supported languages
-languages = {
-    'en': 'English',
-    'zh_CN': '中文',
-}
-
 # -- Options for ReadTheDocs ------------------------------------------------
 
 # ReadTheDocs specific settings
 html_context = {
     'display_language_tabs': True,
     'current_language': language,
-    'languages': languages,
+    'languages': {
+        'en': 'English',
+        'zh_CN': '中文',
+    },
 }
