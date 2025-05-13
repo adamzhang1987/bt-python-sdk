@@ -5,7 +5,7 @@
 
 文档
 ========
-* 详细文档请访问我们的`在线文档 <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
+* 详细文档请访问我们的 `在线文档 <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
 * 官方 API 文档: https://www.bt.cn/api-doc.pdf
 
