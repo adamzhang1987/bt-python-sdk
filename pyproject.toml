@@ -1,13 +1,26 @@
 [project]
 name = "bt-python-sdk"
 version = "1.0.0"
-description = "Add your description here"
+authors = [
+  { name="Adam Zhang", email="adamzhang1987@gmail.com" },
+]
+description = "Pybt is a Python SDK for the BT Panel API. It provides a comprehensive set of tools for managing and automating tasks on servers running the BaoTa Panel."
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "python-dotenv>=1.1.0",
     "requests>=2.32.3",
 ]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.urls]
+Homepage = "https://github.com/adamzhang1987/bt-python-sdk"
+Issues = "https://github.com/adamzhang1987/bt-python-sdk/issues"
 
 [dependency-groups]
 dev = [
