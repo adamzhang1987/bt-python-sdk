@@ -29,23 +29,25 @@ Configuration
 The SDK uses environment variables for configuration. You can set these up in two ways:
 
 1. Using a `.env` file (recommended):
-   .. code-block:: bash
 
-      # Create a .env file in your project root
-      BT_API_KEY="your-api-key"
-      BT_PANEL_HOST="http://localhost:8888"
-      DEBUG=False
-      TIMEOUT=30
-      VERIFY_SSL=False
+.. code-block:: bash
 
-2. Setting environment variables directly:
-   .. code-block:: bash
+   # Create a .env file in your project root
+   BT_API_KEY="your-api-key"
+   BT_PANEL_HOST="http://localhost:8888"
+   DEBUG=False
+   TIMEOUT=30
+   VERIFY_SSL=False
 
-      export BT_API_KEY="your-api-key"
-      export BT_PANEL_HOST="http://localhost:8888"
-      export DEBUG=False
-      export TIMEOUT=30
-      export VERIFY_SSL=False
+1. Setting environment variables directly:
+
+.. code-block:: bash
+
+   export BT_API_KEY="your-api-key"
+   export BT_PANEL_HOST="http://localhost:8888"
+   export DEBUG=False
+   export TIMEOUT=30
+   export VERIFY_SSL=False
 
 > Note: The `.env` file should be added to your `.gitignore` to keep your API key secure.
 

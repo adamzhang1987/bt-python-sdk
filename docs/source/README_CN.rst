@@ -11,6 +11,7 @@
 
 安装
 ========
+
 .. code-block:: bash
 
    pip install bt-python-sdk
@@ -27,23 +28,25 @@
 SDK 使用环境变量进行配置。您可以通过以下两种方式设置：
 
 1. 使用 `.env` 文件（推荐）：
-   .. code-block:: bash
 
-      # 在项目根目录创建 .env 文件
-      BT_API_KEY="your-api-key"
-      BT_PANEL_HOST="http://localhost:8888"
-      DEBUG=False
-      TIMEOUT=30
-      VERIFY_SSL=False
+.. code-block:: bash
+
+   # 在项目根目录创建 .env 文件
+   BT_API_KEY="your-api-key"
+   BT_PANEL_HOST="http://localhost:8888"
+   DEBUG=False
+   TIMEOUT=30
+   VERIFY_SSL=False
 
 2. 直接设置环境变量：
-   .. code-block:: bash
 
-      export BT_API_KEY="your-api-key"
-      export BT_PANEL_HOST="http://localhost:8888"
-      export DEBUG=False
-      export TIMEOUT=30
-      export VERIFY_SSL=False
+.. code-block:: bash
+
+   export BT_API_KEY="your-api-key"
+   export BT_PANEL_HOST="http://localhost:8888"
+   export DEBUG=False
+   export TIMEOUT=30
+   export VERIFY_SSL=False
 
 > 注意：`.env` 文件应该添加到 `.gitignore` 中，以保护您的 API 密钥安全。
 
