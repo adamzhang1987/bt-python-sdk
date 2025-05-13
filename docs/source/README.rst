@@ -1,18 +1,18 @@
 About
-=====
+=========
 
 *Pybt* is a Python SDK for the BT Panel API. It provides a comprehensive set of tools for managing and automating tasks on servers running the BaoTa Panel.
 
 > This SDK was developed to address the challenges of managing multiple servers running BaoTa Panel. As the number of servers grew, manual maintenance became increasingly difficult. The SDK enables the creation of a unified operations platform to monitor server status and perform routine maintenance tasks.
 
 Documentation
-============
+================
 * For detailed documentation, please visit our `online documentation <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
 * Official API Documentation: https://www.bt.cn/api-doc.pdf
 
 Installation
-===========
+================
 .. code-block:: bash
 
    pip install bt-python-sdk
@@ -25,7 +25,7 @@ or
    python setup.py install
 
 Configuration
-============
+================
 The SDK uses environment variables for configuration. You can set these up in two ways:
 
 1. Using a `.env` file (recommended):
@@ -50,7 +50,7 @@ The SDK uses environment variables for configuration. You can set these up in tw
 > Note: The `.env` file should be added to your `.gitignore` to keep your API key secure.
 
 Examples
-========
+================
 
 1. First, enable the API interface in ``Panel Settings-API Interface`` and obtain your ``API Key``.
 
@@ -149,11 +149,11 @@ For the ``BT_PANEL_HOST`` parameter, you only need to provide the panel's domain
    >>> doc_api.set_default_document(id=5, index="index.php,index.html")
 
 Features
-========
+============
 Click the triangle to expand and view module methods. For detailed module parameters, see the `online documentation <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
 System: System Status Related APIs
---------------------------------
+--------------------------------------
 * `get_system_total  Get system basic statistics`
 * `get_disk_info  Get disk partition information`
 * `get_network  Get real-time status information (CPU, memory, network, load)`
@@ -161,7 +161,7 @@ System: System Status Related APIs
 * `update_panel  Check panel updates`
 
 Website: Basic Website Management
--------------------------------
+-------------------------------------
 * `get_website_list  Get website list`
 * `get_site_types  Get website categories`
 * `get_php_versions  Get installed PHP version list`
@@ -173,25 +173,25 @@ Website: Basic Website Management
 * `set_website_remark  Modify website remarks`
 
 WebsiteBackup: Website Backup Management
--------------------------------------
+-------------------------------------------
 * `get_backup_list  Get website backup list`
 * `create_backup  Create website backup`
 * `delete_backup  Delete website backup`
 
 Domain: Domain Management
------------------------
+--------------------------------
 * `get_domain_list  Get website domain list`
 * `add_domain  Add website domain`
 * `delete_domain  Delete website domain`
 
 Rewrite: Rewrite and Configuration Management
------------------------------------------
+-------------------------------------------------
 * `get_rewrite_list  Get available rewrite rules`
 * `get_rewrite_content  Get rewrite rule content`
 * `save_rewrite_content  Save rewrite rule content`
 
 Directory: Website Directory and Runtime Configuration
--------------------------------------------------
+-------------------------------------------------------
 * `get_root_path  Get website root directory`
 * `get_directory_config  Get directory configuration`
 * `toggle_cross_site  Toggle cross-site protection`
@@ -200,23 +200,23 @@ Directory: Website Directory and Runtime Configuration
 * `set_run_path  Set website run directory`
 
 PasswordAccess: Password Access Control
------------------------------------
+-----------------------------------------
 * `set_password_access  Set password access for website`
 * `close_password_access  Close password access for website`
 
 TrafficLimit: Traffic Limit Management
-----------------------------------
+----------------------------------------
 * `get_traffic_limit  Get traffic limit configuration`
 * `set_traffic_limit  Set traffic limit configuration`
 * `close_traffic_limit  Close traffic limit`
 
 DefaultDocument: Default Document Management
----------------------------------------
+---------------------------------------------------
 * `get_default_document  Get default document configuration`
 * `set_default_document  Set default document configuration`
 
 Testing
-=======
+================
 Before running unit tests, create a `.env` file in the project root with the following content:
 
 .. code-block:: bash

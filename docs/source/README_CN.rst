@@ -1,16 +1,16 @@
 关于
-====
+========
 
 *Pybt* 是一个用于宝塔面板 API 的 Python SDK。它提供了一套全面的工具，用于管理和自动化运行宝塔面板的服务器上的任务。
 
 文档
-====
+========
 * 详细文档请访问我们的`在线文档 <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
 * 官方 API 文档: https://www.bt.cn/api-doc.pdf
 
 安装
-====
+========
 .. code-block:: bash
 
    pip install bt-python-sdk
@@ -23,7 +23,7 @@
    python setup.py install
 
 配置
-====
+========
 SDK 使用环境变量进行配置。您可以通过以下两种方式设置：
 
 1. 使用 `.env` 文件（推荐）：
@@ -48,7 +48,7 @@ SDK 使用环境变量进行配置。您可以通过以下两种方式设置：
 > 注意：`.env` 文件应该添加到 `.gitignore` 中，以保护您的 API 密钥安全。
 
 示例
-====
+========
 
 1. 首先，在``面板设置-API接口``中启用 API 接口并获取您的``API密钥``。
 
@@ -147,11 +147,11 @@ SDK 使用环境变量进行配置。您可以通过以下两种方式设置：
    >>> doc_api.set_default_document(id=5, index="index.php,index.html")
 
 功能特性
-========
+============
 点击三角形展开查看模块方法。有关详细模块参数，请参阅`在线文档 <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
 System: 系统状态相关 API
---------------------
+--------------------------------
 * `get_system_total  获取系统基本统计信息`
 * `get_disk_info  获取磁盘分区信息`
 * `get_network  获取实时状态信息（CPU、内存、网络、负载）`
@@ -159,7 +159,7 @@ System: 系统状态相关 API
 * `update_panel  检查面板更新`
 
 Website: 基础网站管理
-------------------
+--------------------------------
 * `get_website_list  获取网站列表`
 * `get_site_types  获取网站分类`
 * `get_php_versions  获取已安装的 PHP 版本列表`
@@ -171,25 +171,25 @@ Website: 基础网站管理
 * `set_website_remark  修改网站备注`
 
 WebsiteBackup: 网站备份管理
-------------------------
+--------------------------------
 * `get_backup_list  获取网站备份列表`
 * `create_backup  创建网站备份`
 * `delete_backup  删除网站备份`
 
 Domain: 域名管理
--------------
+--------------------------------
 * `get_domain_list  获取网站域名列表`
 * `add_domain  添加网站域名`
 * `delete_domain  删除网站域名`
 
 Rewrite: 重写规则和配置管理
------------------------
+--------------------------------
 * `get_rewrite_list  获取可用的重写规则`
 * `get_rewrite_content  获取重写规则内容`
 * `save_rewrite_content  保存重写规则内容`
 
 Directory: 网站目录和运行时配置
---------------------------
+--------------------------------
 * `get_root_path  获取网站根目录`
 * `get_directory_config  获取目录配置`
 * `toggle_cross_site  切换跨站保护`
@@ -198,23 +198,23 @@ Directory: 网站目录和运行时配置
 * `set_run_path  设置网站运行目录`
 
 PasswordAccess: 密码访问控制
-------------------------
+--------------------------------
 * `set_password_access  设置网站密码访问`
 * `close_password_access  关闭网站密码访问`
 
 TrafficLimit: 流量限制管理
-----------------------
+--------------------------------
 * `get_traffic_limit  获取流量限制配置`
 * `set_traffic_limit  设置流量限制配置`
 * `close_traffic_limit  关闭流量限制`
 
 DefaultDocument: 默认文档管理
--------------------------
+--------------------------------
 * `get_default_document  获取默认文档配置`
 * `set_default_document  设置默认文档配置`
 
 测试
-====
+========
 在运行单元测试之前，在项目根目录创建 `.env` 文件，内容如下：
 
 .. code-block:: bash

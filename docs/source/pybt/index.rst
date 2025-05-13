@@ -6,10 +6,10 @@ pybt modules
    :caption: Contents:
    :numbered: 2
 
-   modules/api/system
-   modules/api/website
-   modules/core/client
-   modules/core/config
-   modules/core/token
-   modules/utils/exceptions
-   modules/utils/logger
+   modules/client
+   modules/config
+   modules/exceptions
+   modules/logger
+   modules/system
+   modules/token
+   modules/website

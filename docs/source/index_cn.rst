@@ -5,7 +5,7 @@
 
 Welcome to bt-python-sdk's documentation!
 =========================================
-.. include:: ./README.rst
+.. include:: ./README_CN.rst
 
 .. toctree::
    :maxdepth: 3
@@ -20,8 +20,8 @@ Indices and tables
 * :ref:`modindex`
 * :ref:`search`
 
-Language Versions
------------------------
+语言版本
+----------------
 
 * `English <index.html>`_
 * `简体中文 <index_cn.html>`_
