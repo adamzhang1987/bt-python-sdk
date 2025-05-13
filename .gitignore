@@ -166,8 +166,8 @@ venv.bak/
 # vscode
 .vscode/
 
-# api key file
-config.py
+# cursor
+.cursor/
 
 # macOS
 .DS_Store

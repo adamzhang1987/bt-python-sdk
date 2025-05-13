@@ -1,32 +1,72 @@
 About
 =====
 
-*Pybt* is a BaoTa panel python sdk.
+*Pybt* is a Python SDK for the BT Panel API. It provides a comprehensive set of tools for managing and automating tasks on servers running the BaoTa Panel.
 
-*Pybt* 是一个宝塔面板API的Python版本sdk封装库
+> This SDK was developed to address the challenges of managing multiple servers running BaoTa Panel. As the number of servers grew, manual maintenance became increasingly difficult. The SDK enables the creation of a unified operations platform to monitor server status and perform routine maintenance tasks.
 
-Documentation:
-https://bt-python-sdk.readthedocs.io/en/latest/?
+Documentation
+============
+* For detailed documentation, please visit our `online documentation <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
+
+* Official API Documentation: https://www.bt.cn/api-doc.pdf
+
+Installation
+===========
+.. code-block:: bash
+
+   pip install bt-python-sdk
+
+or
+
+.. code-block:: bash
+
+   git clone https://github.com/adamzhang1987/bt-python-sdk.git
+   python setup.py install
+
+Configuration
+============
+The SDK uses environment variables for configuration. You can set these up in two ways:
+
+1. Using a `.env` file (recommended):
+   .. code-block:: bash
+
+      # Create a .env file in your project root
+      BT_API_KEY="your-api-key"
+      BT_PANEL_HOST="http://localhost:8888"
+      DEBUG=False
+      TIMEOUT=30
+      VERIFY_SSL=False
+
+2. Setting environment variables directly:
+   .. code-block:: bash
+
+      export BT_API_KEY="your-api-key"
+      export BT_PANEL_HOST="http://localhost:8888"
+      export DEBUG=False
+      export TIMEOUT=30
+      export VERIFY_SSL=False
+
+> Note: The `.env` file should be added to your `.gitignore` to keep your API key secure.
 
 Examples
 ========
 
-1.首先需要在 ``面板设置-API接口`` 中打开API接口，获取 ``接口秘钥`` 。
+1. First, enable the API interface in ``Panel Settings-API Interface`` and obtain your ``API Key``.
 
-2.开启API后，必需在IP白名单列表中的IP才能访问面板API接口。
+2. After enabling the API, only IPs in the whitelist can access the panel API interface.
 
-3.如需本机调用面板API密钥，请添加“127.0.0.1”和本机IP至IP白名单。
+3. To call the panel API from your local machine, add "127.0.0.1" and your local IP to the whitelist.
 
-接口初始化\ ``YOUR_PANEL_ADDRESS``\ 参数不需要安全入口，只需要填写面板的域名或IP加端口即可，如:
-``http://192.168.1.168:8888``\ 。
+For the ``BT_PANEL_HOST`` parameter, you only need to provide the panel's domain or IP with port, e.g., ``http://192.168.1.168:8888``.
 
 .. code:: python
 
-   # 系统状态相关接口api
-   >>> from pybt.system import System
-   >>> system_api = System(YOUR_PANEL_ADDRESS, YOUR_API_KEY)
+   # System status related APIs
+   >>> from pybt.api import System
+   >>> system_api = System()  # Will automatically use environment variables
 
-   # 获取系统基础统计
+   # Get system basic statistics
    >>> system_api.get_system_total()
 
    {'memTotal': 31700,
@@ -36,32 +76,32 @@ Examples
     'memRealUsed': 3833,
     'cpuNum': 12,
     'cpuRealUsed': 4.9,
-    'time': '36天',
+    'time': '36 days',
     'system': 'Ubuntu 20.04.3 LTS x86_64(Py3.7.9)',
     'isuser': 0,
     'isport': True,
     'version': '7.7.0'}
 
-   # 获取磁盘分区信息
-    >>> system_api.get_disk_info()
+   # Get disk partition information
+   >>> system_api.get_disk_info()
 
-    [{'filesystem': '/dev/sda6',
-     'type': 'ext4',
-     'path': '/',
-     'size': ['1.1T', '23G', '1005G', '3%'],
-     'inodes': ['72089600', '360084', '71729516', '1%']}]
+   [{'filesystem': '/dev/sda6',
+    'type': 'ext4',
+    'path': '/',
+    'size': ['1.1T', '23G', '1005G', '3%'],
+    'inodes': ['72089600', '360084', '71729516', '1%']}]
 
 .. code:: python
 
-   # 网站管理相关接口
-   >>> from pybt.sites import Sites
-   >>> sites_api = Sites(YOUR_PANEL_ADDRESS, YOUR_API_KEY)
+   # Website management related APIs
+   >>> from pybt.api import Website, WebsiteBackup, Domain, Rewrite, Directory, PasswordAccess, TrafficLimit, DefaultDocument
+   >>> website_api = Website()  # Will automatically use environment variables
 
-   # 获取网站列表
-   >>> sites_api.websites()
+   # Get website list
+   >>> website_api.get_website_list()
 
    {'where': '',
-    'page': "<div><span class='Pcurrent'>1</span><span class='Pcount'>共1条</span></div>",
+    'page': "<div><span class='Pcurrent'>1</span><span class='Pcount'>Total: 1</span></div>",
     'data': [{'id': 5,
       'name': '10.10.11.181',
       'path': '/www/wwwroot/webSiteDir',
@@ -77,75 +117,129 @@ Examples
        'dns': ['*.*.com'],
        'subject': '*.*.com',
        'endtime': 73},
-     'php_version': '静态'}]}
+     'php_version': 'Static'}]}
 
-   # 获取PHP版本信息
-   >>> sites_api.get_php_version()
+   # Get PHP version information
+   >>> website_api.get_php_versions()
 
-   [{'version': '00', 'name': '纯静态'}, {'version': '56', 'name': 'PHP-56'}]
+   [{'version': '00', 'name': 'Static'}, {'version': '56', 'name': 'PHP-56'}]
 
-   # 获取网站SSL详情, YOUR_SITES_NAME通过websites接口获取
-   >>> sites_api.get_ssl(YOUR_SITES_NAME)
+   # Website backup management
+   >>> backup_api = WebsiteBackup()
+   >>> backup_api.get_backup_list(search=5)  # Get backups for website ID 5
 
-   {'status': True,
-    'oid': -1,
-    'domain': [{'name': '10.10.11.181'}, {'name': '127.0.0.1'}],
-    'key': YOUR_KEY,
-    'csr': YOUR_CSR,
-    'type': 1,
-    'httpTohttps': False,
-    'cert_data': {'subject': '*.*.com',
-     'notAfter': '2022-03-09',
-     'notBefore': '2021-12-09',
-     'issuer': "Let's Encrypt",
-     'dns': ['*.*.com']},
-    'email': 'test@message.com',
-    'index': '142e5275a456ecd7bf32bda98528375c',
-    'auth_type': 'http'}
+   # Domain management
+   >>> domain_api = Domain()
+   >>> domain_api.get_domain_list(site_id=5)  # Get domains for website ID 5
 
-.. code:: python
+   # Directory and configuration management
+   >>> dir_api = Directory()
+   >>> dir_api.get_root_path(id=5)  # Get root path for website ID 5
 
-   # FTP管理相关接口
-   >>> from pybt.ftp import Ftp
-   >>> ftp_api = Ftp(YOUR_PANEL_ADDRESS, YOUR_API_KEY)
-   # 获取FTP信息列表
-   >>> ftp_api.web_ftp_list()
+   # Password access control
+   >>> pwd_api = PasswordAccess()
+   >>> pwd_api.set_password_access(id=5, username="admin", password="secret")
 
-   {'where': '',
-    'page': "<div><span class='Pcurrent'>1</span><span class='Pcount'>共1条</span></div>",
-    'data': [{'id': 1,
-      'pid': 0,
-      'name': 'web_user',
-      'password': 'web_user_password',
-      'status': '1',
-      'ps': 'web_user',
-      'addtime': '2021-10-25 10:48:35',
-      'path': '/www/wwwroot/web_user'}]}
+   # Traffic limit management
+   >>> traffic_api = TrafficLimit()
+   >>> traffic_api.set_traffic_limit(id=5, perserver=100, perip=10, limit_rate=1024)
 
-.. code:: python
+   # Default document management
+   >>> doc_api = DefaultDocument()
+   >>> doc_api.set_default_document(id=5, index="index.php,index.html")
 
-   # 数据库管理
-   >>> from pybt.dbm import DBM
-   >>> dbm_api = DBM(YOUR_PANEL_ADDRESS, YOUR_API_KEY)
-   # 获取数据库信息列表
-   >>> dbm_api.web_db_list()
+Features
+========
+Click the triangle to expand and view module methods. For detailed module parameters, see the `online documentation <https://bt-python-sdk.readthedocs.io/en/latest/?>`_
 
-   {'where': '',
-    'page': "<div><span class='Pcurrent'>1</span><span class='Pcount'>共1条</span></div>",
-    'data': [{'id': 1,
-      'pid': 0,
-      'name': 'test_site_db',
-      'username': 'test_site_db',
-      'password': 'test_site_db_password',
-      'accept': '127.0.0.1',
-      'ps': 'test_site_db',
-      'addtime': '2021-10-25 10:53:15',
-      'backup_count': 0}]}
+System: System Status Related APIs
+--------------------------------
+* `get_system_total  Get system basic statistics`
+* `get_disk_info  Get disk partition information`
+* `get_network  Get real-time status information (CPU, memory, network, load)`
+* `get_task_count  Check for installation tasks`
+* `update_panel  Check panel updates`
 
-.. code:: python
+Website: Basic Website Management
+-------------------------------
+* `get_website_list  Get website list`
+* `get_site_types  Get website categories`
+* `get_php_versions  Get installed PHP version list`
+* `create_website  Create website`
+* `delete_website  Delete website`
+* `stop_website  Stop website`
+* `start_website  Start website`
+* `set_expiry_date  Set website expiration date`
+* `set_website_remark  Modify website remarks`
 
-   # 插件管理
-   >>> from pybt.plugin import Plugin
-   >>> plugin_api = Plugin((YOUR_PANEL_ADDRESS, YOUR_API_KEY)
-   # 宝塔一键部署执行
-   >>> plugin_api.setup_package(dname, site_name, php_version)
+WebsiteBackup: Website Backup Management
+-------------------------------------
+* `get_backup_list  Get website backup list`
+* `create_backup  Create website backup`
+* `delete_backup  Delete website backup`
+
+Domain: Domain Management
+-----------------------
+* `get_domain_list  Get website domain list`
+* `add_domain  Add website domain`
+* `delete_domain  Delete website domain`
+
+Rewrite: Rewrite and Configuration Management
+-----------------------------------------
+* `get_rewrite_list  Get available rewrite rules`
+* `get_rewrite_content  Get rewrite rule content`
+* `save_rewrite_content  Save rewrite rule content`
+
+Directory: Website Directory and Runtime Configuration
+-------------------------------------------------
+* `get_root_path  Get website root directory`
+* `get_directory_config  Get directory configuration`
+* `toggle_cross_site  Toggle cross-site protection`
+* `toggle_access_log  Toggle access log`
+* `set_root_path  Set website root directory`
+* `set_run_path  Set website run directory`
+
+PasswordAccess: Password Access Control
+-----------------------------------
+* `set_password_access  Set password access for website`
+* `close_password_access  Close password access for website`
+
+TrafficLimit: Traffic Limit Management
+----------------------------------
+* `get_traffic_limit  Get traffic limit configuration`
+* `set_traffic_limit  Set traffic limit configuration`
+* `close_traffic_limit  Close traffic limit`
+
+DefaultDocument: Default Document Management
+---------------------------------------
+* `get_default_document  Get default document configuration`
+* `set_default_document  Set default document configuration`
+
+Testing
+=======
+Before running unit tests, create a `.env` file in the project root with the following content:
+
+.. code-block:: bash
+
+   BT_API_KEY="your-api-key"
+   BT_PANEL_HOST="http://localhost:8888"
+   DEBUG=False
+   TIMEOUT=30
+   VERIFY_SSL=False
+
+Then run:
+
+.. code-block:: bash
+
+   # Run unit tests only
+   pytest
+
+   # Run both unit and integration tests
+   pytest --run-integration
+
+   # Run only integration tests
+   pytest -m integration --run-integration
+
+Good luck! :star:
+
+Powered by `bt APIs <https://www.bt.cn/bbs/thread-20376-1-1.html>`_

@@ -11,6 +11,7 @@ Welcome to bt-python-sdk's documentation!
    :caption: Contents:
    
    README
+   README_CN
    pyqt/index
 
 Indices and tables

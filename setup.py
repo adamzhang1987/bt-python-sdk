@@ -13,17 +13,27 @@ setuptools.setup(
     author_email=__author_email__,
     license=__license__,
     packages=[
-        'examples',
-        'examples.system',
-        'pybt'
-        ],
+        'pybt',
+        'pybt.api',
+        'pybt.core',
+        'examples'
+    ],
     url=__url__,
     install_requires=[
-        'requests',
+        'requests>=2.31.0',
+        'python-dotenv>=1.0.0',
     ],
+    python_requires='>=3.8',
     classifiers=[
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
 )
